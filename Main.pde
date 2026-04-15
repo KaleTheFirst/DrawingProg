@@ -19,7 +19,7 @@ void setup() {
 }
 
 void draw() {
-  // --- DRAWING ---
+  // draw
   if (mousePressed && mouseY < height - 60 && mouseX < width - 60 
       && !colorSlider.dragging && !sizeSlider.dragging) {
 
@@ -34,21 +34,12 @@ void draw() {
   rect(0, height - 60, width, 60);   
   rect(width - 60, 0, 60, height);   
   
-  //fill(255);
-  //rect(250, height - 40, 120, 30);
-  
   fill(rgbMode ? color(180,220,255) : 220);
   rect(300,height - 45,120,30);
   fill(0);
   textAlign(CENTER, CENTER);
   text(rgbMode ? "RGB MODE" :"GRAY MODE", 360,height - 30);
   
-  
-  //if(rgbMode){
-  //  text("RGB Mode", 360, height - 30);
-  //} else{
-  //  text("Grayscale", 360, height - 30);
-  //}
   
   float v = colorSlider.value;
   
@@ -66,8 +57,6 @@ void draw() {
   colorSlider.display();
   sizeSlider.display();
 
-
-  //currentColor = color(colorSlider.value);
   brushSize = int(map(sizeSlider.value, 0, 255, 1, 50));
 
   
@@ -100,6 +89,6 @@ void mousePressed(){
 
 void keyPressed() {
   if (key == ' ') {
-    background(255);
+    background(255); //erase??
   }
 }
